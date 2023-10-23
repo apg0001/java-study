@@ -24,25 +24,19 @@ class Multiply extends Thread{
 
 public class _04 {
     public static void main(String[] args) {
-        Thread R0 = new Multiply("Thread0", 0);
-        Thread R1 = new Multiply("Thread1", 1);
-        Thread R2 = new Multiply("Thread2", 2);
-        Thread R3 = new Multiply("Thread3", 3);
-        Thread R4 = new Multiply("Thread4", 4);
-        Thread R5 = new Multiply("Thread5", 5);
-        Thread R6 = new Multiply("Thread6", 6);
-        Thread R7 = new Multiply("Thread8", 7);
-        Thread R8 = new Multiply("Thread8", 8);
-        Thread R9 = new Multiply("Thread9", 9);
-        R0.start();
-        R1.start();
-        R2.start();
-        R3.start();
-        R4.start();
-        R5.start();
-        R6.start();
-        R7.start();
-        R8.start();
-        R9.start();
+        Thread[] threads = {
+                new Multiply("Thread0", 0),
+                new Multiply("Thread1", 1),
+                new Multiply("Thread2", 2),
+                new Multiply("Thread3", 3),
+                new Multiply("Thread4", 4),
+                new Multiply("Thread5", 5),
+                new Multiply("Thread6", 6),
+                new Multiply("Thread7", 7),
+                new Multiply("Thread8", 8),
+                new Multiply("Thread9", 9)
+        };
+        for(Thread t : threads)
+            t.start();
     }
 }
